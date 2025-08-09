@@ -40,6 +40,25 @@ Then I went to the Organizational Unit "Students" properties, in object I disabl
 I grant IT SUPPORT the privileges to reset other low-privilege Users Passwords. According to my organisational chart, I put the IT support in charge of resetting passwords over sales, marketing and Management OUs. By delegate the control over OU to IT SUPPORT.
 <img width="404" height="493" alt="image" src="https://github.com/user-attachments/assets/60afada0-3cf9-43d0-b11c-b7b90b5acdd7" /> <img width="751" height="730" alt="image" src="https://github.com/user-attachments/assets/3641571f-8760-44c2-bed1-66fd6495e791" /><img width="637" height="499" alt="Screenshot 2025-08-05 163514" src="https://github.com/user-attachments/assets/d6012355-e4bd-47f0-97c4-afad06839670" />
 
-I remote connect to Phillip (IT SUPPORT) and test Phillip's privilege to reset Sophie's password. I used Powershell to do a passwword reset because he doesn't have the privileges to open Active Directory Users and Computers.   
+I remote connect to Phillip (IT SUPPORT) and test Phillip's privilege to reset Sophie's password. I used Powershell to do a password reset because he doesn't have the privileges to open Active Directory Users and Computers.   
 <img width="884" height="123" alt="image" src="https://github.com/user-attachments/assets/269324c2-3337-4971-9186-b2582acbfe11" />
 
+## Managing Computers in AD
+
+By managing Computers in AD, I learned how servers work and how to locate laptops and PCs in the network.
+<img width="971" height="537" alt="image" src="https://github.com/user-attachments/assets/dc7386d2-a783-4f06-9f34-b6510af9f768" />
+
+To organize the machines in the active directory domain, I made an excellent starting point is to segregate the devices according to their use. I divided into three following categories: 
+*  Workstations: it is most common in AD. Each user in the domain will likely be logging into a workstation.
+*  Servers: The second most common device within AD. Servers are generally used to provide services to users or other servers.
+*  Domain Controllers: Third common within an AD and already in an OU created by Windows. Domain controller allow you to manage the active directory domain. These devices are often deemed the most sensitive devices within the network as they contain hashed passwords for all user accounts within the environment.
+<img width="967" height="472" alt="image" src="https://github.com/user-attachments/assets/1673ff1c-ac55-4b9f-980a-e9bd172df9f5" />
+
+After I made the OUs, I moved the personal computers and laptops to the Workstations OU and the servers to the Servers OU from the Computers container. Doing so will allow us to configure polices for each OU later.
+<img width="721" height="288" alt="image" src="https://github.com/user-attachments/assets/4ad0c331-8faa-469b-aacd-e73f51c95044" />
+<img width="797" height="264" alt="Screenshot 2025-08-09 193138" src="https://github.com/user-attachments/assets/b89294db-9950-48dc-a5e3-003ca5084368" />
+
+## Group Policies 
+After organised users and computers in OUs. Now we can able to deploy different policies for each OU individually. That way, we can push different configurations and security baselines to users depending on their department.
+
+Windows Managers such policies as Group Policy Objects allow me to set a baseline on specific machines and identities.
